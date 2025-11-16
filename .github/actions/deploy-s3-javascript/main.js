@@ -16,12 +16,19 @@ function run() {
     const distFolder = core.getInput('dist-folder', { required: true });
 
     // 2) Upload files to S3 using AWS CLI
+    
     const s3Uri = `s3://${bucketName}`;
     const command = `aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`;
     exec.exec(command);
 
+    // 3) Set the output value for the deployed URL
+    
+    const deployedUrl = `http://${bucketName}.s3-website-${bucketRegion}.amazonaws.com`;
+    core.setOutput('deployed-url', deployedUrl);
 
-    core.notice('Hello from deploy-s3-javascript action!'); // Logs a notice message to the GitHub Actions log
+
+    // Logs a notice message to the GitHub Actions log
+    // core.notice('Hello from deploy-s3-javascript action!'); 
 }
 
 run();
