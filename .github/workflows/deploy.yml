@@ -71,6 +71,6 @@ jobs:
         with:
           bucket-name: nidhal-v1
           dist-folder: ./dist
-          region-backet: eu-central-1
+          bucket-region: eu-central-1
 
         
