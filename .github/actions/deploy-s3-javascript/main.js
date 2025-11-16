@@ -23,7 +23,7 @@ function run() {
 
     // 3) Set the output value for the deployed URL
     
-    const deployedUrl = `http://${bucketName}.s3-website-${bucketRegion}.amazonaws.com`;
+    const deployedUrl = `http://${bucketName}.s3-website.${bucketRegion}.amazonaws.com`;
     core.setOutput('deployed-url', deployedUrl);
 
 
