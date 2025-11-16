@@ -17,7 +17,7 @@ function run() {
 
     // 2) Upload files to S3 using AWS CLI
     const s3Uri = `s3://${bucketName}`;
-    const command = `aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion} --delete`;
+    const command = `aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`;
     exec.exec(command);
 
 
