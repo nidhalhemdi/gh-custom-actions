@@ -4,7 +4,7 @@ inputs:
   bucket-name:
     description: 'The name of the S3 bucket to deploy to'
     required: true
-  region-backet:
+  bucket-region:
     description: 'The AWS region where the S3 bucket is located'
     required: false
     default: 'us-east-1'
